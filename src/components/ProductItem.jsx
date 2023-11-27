@@ -4,8 +4,8 @@ import bask from "../img/bask.svg";
 import heart from "../img/red_heart.svg"
 import { Link } from "react-router-dom";
 
-const [isLiked, setIsLiked] = useState(JSON.parse(localStorage.getItem('cart')));
-const ProductItem = ({ id, image, category, title, price, rating }) => {
+const ProductItem = ({ id, image, category, title, price, rating}) => {
+	let [isLiked, setIsLiked] = useState(JSON.parse(localStorage.getItem('cart')).includes(id) || false);
 
 
 	let salePrice = (price - (20 * price) / 100).toLocaleString("UK-uk");
