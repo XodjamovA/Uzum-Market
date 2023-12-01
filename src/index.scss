@@ -47,10 +47,6 @@
     color: #fff;
 }
 
-// .item {
-//     @apply text-[red] text-xs hover: underline;
-// }
-
 @media (max-width: 1536px) {
     .h5_3_1 {
         grid-gap: 10px;
@@ -88,13 +84,11 @@
     .footer {
         margin: 0 auto;
         grid-template-columns: repeat(3, 1fr);
-
-        .width {
-            width: 250px;
-        }
+        margin: 0 auto;
 
         .div {
             margin-top: 40px;
+            width: 400px;
             display: grid;
             grid-template-columns: repeat(2, 1fr);
         }
@@ -110,14 +104,28 @@
 
     #li_home {
         display: none;
-    } 
+    }
 
     ul {
         font-size: .875rem;
     }
 
-    footer h5{
+    footer h5 {
         font-style: 10px;
     }
 
+    .footer {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+}
+
+@media (max-width: 768px) {
+
+    .div_grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+
+    }
 }

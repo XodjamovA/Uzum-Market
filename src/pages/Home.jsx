@@ -38,21 +38,3 @@ export default function Home() {
 		</div >
 	)
 }
-
-
-
-
-
-
-
-
-
-// 		if (buttonText === "Скрыть") {
-// 			setLimit(5)
-// 			setButtonText("ПОКАЗАТЬ ЕЩЕ 5")
-// 		}
-// 		if (products.length === res.data.length) {
-// 			setButtonText("Скрыть")
-// 		} else {
-// 			setProducts(res.data);
-// 		}

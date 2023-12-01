@@ -1,13 +1,12 @@
 import React, { useState } from "react";
-import like from "../img/like.svg";
-import bask from "../img/bask.svg";
-import heart from "../img/red_heart.svg"
+import like from "../public/like.svg";
+import bask from "../public/bask.svg";
+import heart from "../public/red_heart.svg"
 import { Link } from "react-router-dom";
+import add_check from "../public/add_check.png" 	
 
-const ProductItem = ({ id, image, category, title, price, rating}) => {
-	let [isLiked, setIsLiked] = useState(JSON.parse(localStorage.getItem('cart')).includes(id) || false);
-
-
+const ProductItem = ({ id, image, category, title, price, rating }) => {
+	const [isLiked, setIsLiked] = useState(JSON.parse(localStorage.getItem('cart')).includes(id) || false );
 	let salePrice = (price - (20 * price) / 100).toLocaleString("UK-uk");
 
 	const saveToCart = () => {
@@ -26,13 +25,13 @@ const ProductItem = ({ id, image, category, title, price, rating}) => {
 
 	return (
 		<div className="flex flex-wrap justify-between">
-			<div className="w-[200px] h-[400px] flex flex-col rounded overflow-hidden">
-				<div className="w-full h-[309px] relative rounded overflow-hidden">
-					<img className="object-cover" src={image} alt="" />
+			<div className="w-[232] h-[456px] flex flex-col rounded overflow-hidden">
+				<div className="w-full h-[300px] mx-auto relative rounded overflow-hidden flex justify-center items-center">
+					<img className="object-contain h-[200px]" src={image} alt="" />
 					<span className="absolute left-0 bottom-0 text-xs text-white bg-indigo-400 rounded p-1">
 						{category}
 					</span>
-					<img className="absolute right-2 top-2 w-[20px]" src={isLiked ? heart : like} onClick={saveToCart} alt="" />
+					<img className="absolute right-2 top-2 w-[20px] cursor-pointer" src={isLiked ? heart : like} onClick={saveToCart} alt="" />
 				</div>
 				<div className="relative">
 					<div className="p-2 flex flex-col justify-between gap-1">
@@ -54,7 +53,7 @@ const ProductItem = ({ id, image, category, title, price, rating}) => {
 							<h3 className="text-base">{salePrice}</h3>
 						</Link>
 						<div className="w-8 h-8 rounded-full border-2 border-black flex items-center justify-center absolute bottom-2 right-2 cursor-pointer">
-							<img src={bask} alt="" />
+							<img src={isLiked ? add_check : bask} onClick={saveToCart} alt="" />
 						</div>
 					</div>
 				</div>
