@@ -7,23 +7,6 @@ import { BASE_URL } from '../urls';
 export default function Favourite() {
     const [saveds, setSaveds] = useState([]);
 
-    useEffect(() => {
-        const ids = JSON.parse(localStorage.getItem('cart')) || []
-        const data = []
-
-        fetch(BASE_URL + "/products")
-            .then((res) => res.json())
-            .then((res) => {
-                for (let item of res) {
-                    for (let id of ids) {
-                        if (id === item.id) {
-                            data.push(item)
-                        }
-                    }
-                }
-                setSaveds(data)
-            })
-    }, []);
 
 
     return (

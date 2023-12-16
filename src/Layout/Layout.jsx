@@ -82,7 +82,7 @@ function Layout(props) {
 
                             <li className='flex items-center gap-1 text-[black]'>
                                 <img src="https://static.uzum.uz/product-action/paiment.png" alt="" className='h-6' />
-                                <Link to="">Халяльная рассрочка</Link>
+                                <Link to="">Рассрочка</Link>
                             </li>
                             <li>
                                 <Link to="/electronika">Электроника</Link>
@@ -102,7 +102,7 @@ function Layout(props) {
                             <li>
                                 <Link to="">Красота</Link>
                             </li>
-                            <li>
+                            <li id='health'>
                                 <Link to="">Здоровье</Link>
                             </li>
                             <li id='li_home'>

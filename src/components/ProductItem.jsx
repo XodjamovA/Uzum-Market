@@ -3,10 +3,10 @@ import like from "../public/like.svg";
 import bask from "../public/bask.svg";
 import heart from "../public/red_heart.svg"
 import { Link } from "react-router-dom";
-import add_check from "../public/add_check.png" 	
+import add_check from "../public/add_check.png"
 
 const ProductItem = ({ id, image, category, title, price, rating }) => {
-	const [isLiked, setIsLiked] = useState(JSON.parse(localStorage.getItem('cart')).includes(id) || false );
+	const [isLiked, setIsLiked] = useState(JSON.parse(localStorage.getItem('cart')).includes(id) || false);
 	let salePrice = (price - (20 * price) / 100).toLocaleString("UK-uk");
 
 	const saveToCart = () => {
@@ -53,7 +53,7 @@ const ProductItem = ({ id, image, category, title, price, rating }) => {
 							<h3 className="text-base">{salePrice}</h3>
 						</Link>
 						<div className="w-8 h-8 rounded-full border-2 border-black flex items-center justify-center absolute bottom-2 right-2 cursor-pointer">
-							<img src={isLiked ? add_check : bask} onClick={saveToCart} alt="" />
+							<img src={bask} alt="" />
 						</div>
 					</div>
 				</div>
